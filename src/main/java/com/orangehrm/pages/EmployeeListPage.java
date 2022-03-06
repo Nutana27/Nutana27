@@ -28,7 +28,6 @@ public class EmployeeListPage {
 	By lnkEmployeelist=By.id("menu_pim_viewEmployeeList");
 	
 	By txtEmpName=By.name("empsearch[employee_name][empName]");
-	//By txtEmpName= By.id("empsearch_employee_name_empName");
 	
 	By btnSearch= By.id("searchBtn");
 	
