@@ -7,6 +7,7 @@ import java.time.Duration;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Optional;
@@ -14,6 +15,7 @@ import org.testng.annotations.Parameters;
 
 import com.orangehrm.dataproviders.ConfigUtility;
 import com.orangehrm.factory.BrowserFactory;
+import com.orangehrm.pages.LoginPage;
 
 public abstract class BaseClass {
 
@@ -59,6 +61,9 @@ public abstract class BaseClass {
 		driver.get(ConfigUtility.getValue("url"));
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
+		
+		
+		
 	}
 	
 	@AfterClass

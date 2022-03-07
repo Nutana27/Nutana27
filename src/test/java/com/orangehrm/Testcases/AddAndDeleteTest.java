@@ -35,20 +35,15 @@ public class AddAndDeleteTest extends BaseClass {
 	@Test(priority=2,dataProvider="AddEmp", dataProviderClass=CustomDataProvider.class)
 	public void AddEmployee(String fname, String lname, String uname, String pwd, String cmfpwd, String status) throws Exception  {
 		AddEmployee addemp=new AddEmployee(driver);
-		EmployeeListPage emplist=new EmployeeListPage(driver);
-		
 		addemp.addEmployeeDetails(fname, lname, uname, pwd, cmfpwd, status);
+		
+		EmployeeListPage emplist=new EmployeeListPage(driver);
 		emplist.VerifyPersonalDetails();
 		
 		String actual =emplist.profileNameDetails;
-		
 		String expected =addemp.firstname +" "+ addemp.lastname;
 		
-		System.out.println("LOG-INFO: Expected Name " + expected);
-		System.out.println("LOG-INFO: actualname " + actual);
-		
 		Assert.assertEquals(actual, expected,"Profile Name is not matched");
-		
 		boolean statusMsg= emplist.isSuccessMsgDisplay();
 		Assert.assertTrue(statusMsg);
 		
@@ -58,4 +53,5 @@ public class AddAndDeleteTest extends BaseClass {
 		
 		emplist.logOutFromApplication();
 	}
+	
 }
