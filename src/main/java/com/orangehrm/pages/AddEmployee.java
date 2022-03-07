@@ -1,16 +1,10 @@
 package com.orangehrm.pages;
 
 
-import java.time.Duration;
-import java.util.List;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.github.javafaker.Faker;
 import com.orangehrm.utility.Helper;
@@ -48,15 +42,7 @@ public class AddEmployee {
 	
 	By drpDownAddEmp=By.id("status");
 	
-//	By profilePicName= By.xpath("//div[@id='profile-pic']//h1");
-//	
-//	By chkGender= By.id("personal_optGender_2");
-//	
-//	By btnEdit= By.id("btnSave");
-//	
-	By successMsg =By.xpath("//*[contains(text(),'Successfully Saved') and @class]");
 
-	
 	public void addEmployeeDetails(String fname, String lname, String uname, String pwd, String cmfpwd, String status) {
 		
 		Actions act= new Actions(driver);
@@ -85,47 +71,6 @@ public class AddEmployee {
 		driver.findElement(btnAddEmpSave).click();
 		
 	}
-//	public void VerifyPersonalDetails() {
-//
-//			driver.findElement(btnEdit).click();
-//			driver.findElement(chkGender).click();
-//			driver.findElement(btnEdit).click();
-//	}
-//	public void searchEmployeelist() throws Exception {
-//		
-//		Actions act= new Actions(driver);
-//		act.moveToElement(driver.findElement(hoverPimMenu)).build().perform();
-//		
-//		driver.findElement(lnkEmployeelist).click();
-//		
-//		
-//		driver.findElement(txtEmpName).sendKeys(profileNameDetails);
-//		
-//		driver.findElement(btnSearch).click();
-//		
-//		Thread.sleep(2000);
-//		
-//		List<WebElement> rows=driver.findElements(tableRow);
-//		 
-//		for (int i=1;i<rows.size(); i++)
-//		{
-//			driver.findElement(chkbox).click();
-//			driver.findElement(btndelete).click();
-//			driver.findElement(dialogDeleteBtn).click();
-//			isDeleteMsgDisplayed();
-//		}	
-//		
-	//}
-	
 
-//	public boolean isDeleteMsgDisplayed()
-//	{
-//		WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(20));
-//		
-//		return wait.until(ExpectedConditions.elementToBeClickable(deleteMsg)).isDisplayed();
-//	}
-	public boolean isSuccessMsgDisplay() {
-		WebDriverWait wait=new WebDriverWait(driver,Duration.ofSeconds(20));
-		return wait.until(ExpectedConditions.elementToBeClickable(successMsg)).isDisplayed();
-	}
+
 }
